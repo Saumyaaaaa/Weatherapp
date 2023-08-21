@@ -7,7 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Weather Dashboard</h1>
+    <div class="container">
+        <div class="weather-input"></div>
+        <h3>Enter a city Name</h3>
+        <input type="text" placeholder="Eg, NewYork, London ,Tokyo">
+        <button class="search-btn">Search</button>
+        <div class="spearator"></div>
+        <button class="location-btn">User Current Location</button>
+    </div>
+    <div class="weather-data">
+        <div class="current-weather">
+            <div class="details">
+                <h2>london(2023-06-19)</h2>
+                <h4>Temperature : 19.10<sup>o</sup>C</h4>
+                <h4>Wind: 4.31 M/S</h4>
+                <h4>Humidity: 79%</h4>
+            </div>
+            <div class="icon">
+                <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+                <h4>Moderate Rain</h4>
+            
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
