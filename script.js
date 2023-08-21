@@ -1,16 +1,18 @@
-const url = 'https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city=Seattle';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '1729b91219mshcbdfddad1105223p1438f7jsn7af3323f65d8',
-		'X-RapidAPI-Host': 'air-quality-by-api-ninjas.p.rapidapi.com'
-	}
-};
+const cityInput=document.querySelector(".city-input");
+const searchButton=document.querySelector(".search-btn");
+const API_KEY ="2eea1e115bf1654e9d4e88d85ece2a9b";//API key for OpenWeatherMap API
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+const getCityCoorrdinates = () => {
+const cityName = cityInput.value.trim();//get user enetred city name and remove extra spaces
+if(!cityName)return;//return if cityname is empty
+const GEOCODING_API_URL = 'http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}';
+
+fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
+	console.log(data)
+}).catch(() => {
+	alert("An error occured while fetching the coordinates");
+
+});
+
 }
+searchButton.addEventListener("click",getCityCoorrdinates);
